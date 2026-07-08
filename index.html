@@ -1,26 +1,79 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Snake Game</title>
-	<link rel="stylesheet" href="style.css">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>🐍 Snake Game</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
-	<div id="game-container">
-		<canvas id="gc" class="game-canvas" width="400" height="400"></canvas>
-	</div>
-	<div class="keys">
-	  <a class="up arr" onclick="Snake.action('up')">
-	    <i class="chevron up"></i></a>
-	  <br />
-	  <a class="left arr" onclick="Snake.action('left')">
-	    <i class="chevron left"></i></a>
-	  <a class="down arr" onclick="Snake.action('down')">
-	    <i class="chevron down"></i></a>
-	  <a class="right arr" onclick="Snake.action('right')">
-	    <i class="chevron right"></i></a>
-	</div>
-	<script type="text/javascript" src="game.js"></script>
+
+<div class="container">
+
+<h1>🐍 Snake Game</h1>
+
+<div class="hud">
+
+<div class="card">
+<h3>🍎 Score</h3>
+<p id="score">0</p>
+</div>
+
+<div class="card">
+<h3>🏆 High Score</h3>
+<p id="highscore">0</p>
+</div>
+
+</div>
+
+<div id="game-container">
+
+<canvas
+id="gc"
+class="game-canvas"
+width="400"
+height="400">
+</canvas>
+
+</div>
+
+<div class="buttons">
+
+<button onclick="Snake.action('up')">▲</button>
+
+<div>
+
+<button onclick="Snake.action('left')">◀</button>
+
+<button onclick="Snake.pause()">⏸</button>
+
+<button onclick="Snake.action('right')">▶</button>
+
+</div>
+
+<button onclick="Snake.action('down')">▼</button>
+
+</div>
+
+<button class="restart" onclick="Snake.reset()">
+🔄 Restart
+</button>
+
+</div>
+
+<script src="game.js"></script>
+
 </body>
+
 </html>
