@@ -13,3 +13,9 @@ A classic Snake Game built with HTML, CSS, and JavaScript. Control the snake, ea
 [![▶ PLAY GAME](https://img.shields.io/badge/▶%20PLAY%20GAME-8A2BE2?style=for-the-badge&logo=github&logoColor=white)](https://un-bots.github.io/snakegame/)
 
 </p>
+
+<p align="center">
+
+[![Play Game](https://img.shields.io/badge/▶️%20Play%20Game-00C853?style=for-the-badge&logo=googleplay&logoColor=white)](https://un-bots.github.io/snakegame/)
+
+</p>
