@@ -9,9 +9,7 @@ A classic Snake Game built with HTML, CSS, and JavaScript. Control the snake, ea
 # Demo
 
 <p align="center">
-  <a href="https://your-un-bots.github.io/snakegame/" target="_blank">
-    <button style="padding:10px 20px; font-size:16px; border:none; border-radius:8px; background-color:#28a745; color:white; cursor:pointer;">
-      ▶️ Play Game
-    </button>
-  </a>
+
+[![▶ PLAY GAME](https://img.shields.io/badge/▶%20PLAY%20GAME-8A2BE2?style=for-the-badge&logo=github&logoColor=white)](https://un-bots.github.io/snakegame/)
+
 </p>
