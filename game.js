@@ -24,6 +24,8 @@ var Snake = (function () {
   var points = 0;
   var pointsMax = 0;
 
+  let bestScore = localStorage.getItem("snake_best") || 0;
+
   var ActionEnum = { 'none':0, 'up':1, 'down':2, 'left':3, 'right':4 };
   Object.freeze(ActionEnum);
   var lastAction = ActionEnum.none;
@@ -43,6 +45,11 @@ var Snake = (function () {
 
       tail = INITIAL_TAIL;
       points = 0;
+
+      document.getElementById("score").innerText = 0;
+      document.getElementById("highscore").innerText = bestScore;
+
+      
       velocity.x = 0;
       velocity.y = 0;
       player.x = INITIAL_PLAYER.x;
@@ -154,7 +161,9 @@ var Snake = (function () {
         ctx.fillText("(space) pause", 24, 374);
       }
 
-      ctx.fillStyle = 'green';
+      ctx.shadowBlur = 15;
+      ctx.shadowColor = "#8A2BE2";
+      ctx.fillStyle = '#8A2BE2';
       for(var i=0; i<trail.length-1; i++) {
         ctx.fillRect(trail[i].x * gridSize+1, trail[i].y * gridSize+1, gridSize-2, gridSize-2);
 
@@ -162,15 +171,29 @@ var Snake = (function () {
         if (!stopped && trail[i].x == player.x && trail[i].y == player.y){
           game.reset();
         }
-        ctx.fillStyle = 'lime';
+        ctx.fillStyle = '#C77DFF';
       }
       ctx.fillRect(trail[trail.length-1].x * gridSize+1, trail[trail.length-1].y * gridSize+1, gridSize-2, gridSize-2);
 
       if (player.x == fruit.x && player.y == fruit.y) {
         if(!fixedTail) tail++;
         points++;
-        if(points > pointsMax) pointsMax = points;
-        reward = 1;
+
+document.getElementById("score").innerText = points;
+
+if(points > bestScore){
+
+    bestScore = points;
+
+    localStorage.setItem("snake_best", bestScore);
+
+    document.getElementById("highscore").innerText = bestScore;
+}
+
+if(points > pointsMax)
+    pointsMax = points;
+
+reward = 1;
         game.RandomFruit();
         // make sure new fruit didn't spawn in snake tail
         while((function () {
@@ -184,8 +207,11 @@ var Snake = (function () {
         })());
       }
 
-      ctx.fillStyle = 'pink';
+      ctx.shadowBlur = 25;
+      ctx.shadowColor = "#FF3D71";
+      ctx.fillStyle = '#FF3D71';
       ctx.fillRect(fruit.x * gridSize+1, fruit.y * gridSize+1, gridSize-2, gridSize-2);
+      ctx.shadowBlur = 0;
 
       if(stopped) {
         ctx.fillStyle = 'rgba(250,250,250,0.8)';
