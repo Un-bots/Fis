@@ -35,3 +35,13 @@ A classic Snake Game built with HTML, CSS, and JavaScript. Control the snake, ea
 </p>
 
 ---
+<p align="center">
+
+![](https://img.shields.io/badge/HTML-orange?style=for-the-badge&logo=html5)
+
+![](https://img.shields.io/badge/CSS-blue?style=for-the-badge&logo=css3)
+
+![](https://img.shields.io/badge/JavaScript-yellow?style=for-the-badge&logo=javascript)
+
+</p>
+---
