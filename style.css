@@ -5,59 +5,102 @@ box-sizing:border-box;
 }
 
 body{
-
 font-family:Poppins,sans-serif;
-
 background:linear-gradient(135deg,#07030f,#140022,#080014);
-
 min-height:100vh;
-
 display:flex;
-
 justify-content:center;
-
 align-items:center;
-
-color:white;
-
-overflow:hidden;
-
+color:#fff;
+overflow-x:hidden;
+padding:20px;
 }
 
-body::before{
-
-content:"";
-
-position:fixed;
-
-width:700px;
-
-height:700px;
-
-background:radial-gradient(#8a2be255,transparent);
-
-filter:blur(100px);
-
-top:-200px;
-
-right:-150px;
-
-animation:move1 12s infinite alternate;
-
+.container{
+width:100%;
+max-width:520px;
+text-align:center;
 }
 
-body::after{
+h1{
+font-size:48px;
+margin-bottom:20px;
+color:#e7d6ff;
+text-shadow:0 0 20px #8A2BE2;
+}
 
-content:"";
+.hud{
+display:flex;
+justify-content:space-between;
+gap:15px;
+margin-bottom:20px;
+}
 
-position:fixed;
+.card{
+flex:1;
+padding:15px;
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(12px);
+border-radius:18px;
+border:1px solid rgba(255,255,255,.15);
+}
 
-width:600px;
+.card h3{
+font-size:18px;
+margin-bottom:8px;
+}
 
-height:600px;
+.card p{
+font-size:30px;
+font-weight:bold;
+color:#00ff99;
+}
 
-background:radial-gradient(#00ff8833,transparent);
+#game-container{
+display:flex;
+justify-content:center;
+margin:20px 0;
+}
 
-bottom:-200px;
+.game-canvas{
+border:3px solid #8A2BE2;
+border-radius:18px;
+box-shadow:0 0 30px #8A2BE2;
+background:#222;
+}
 
-left:-200
+.buttons{
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+gap:15px;
+margin-top:20px;
+width:100%;
+}
+
+.buttons div{
+display:flex;
+justify-content:center;
+gap:18px;
+}
+
+button{
+width:75px;
+height:75px;
+border:none;
+border-radius:18px;
+background:#8A2BE2;
+color:#fff;
+font-size:30px;
+cursor:pointer;
+transition:.2s;
+box-shadow:0 0 15px #8A2BE2;
+}
+
+button:hover{
+transform:scale(1.08);
+}
+
+.restart{
+margin-top:20px;
